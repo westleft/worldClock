@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Open Sans;
+}
+
+html,body {
+    height: 100%;
+    width: 100%;
+    background-color: #E5E5E5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container {
+    width: 535px;
+}
+h1 {
+    width: 100%;
+    font-size: 71px;
+    font-weight: 800;
+    border-top: solid 10px black;
+    border-bottom: solid 10px black;
+}
+
+.city {
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.line1 {
+    margin-top: 35px;
+}
+
+.line1,.line2,.line3,.line4,.line5 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    color: white;
+    background-color: black;
+    border: 2px solid #000000;
+    .countey{
+        h2 {
+            font-size: 36px;
+        }
+        p {
+            font-size: 16px;
+        }
+    }
+    p {
+        font-size: 72px;
+    }
+}
+
+.line2 {
+    background-color: white;
+    color: black;
+}
