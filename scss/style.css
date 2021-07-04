@@ -31,15 +31,14 @@ h1 {
   font-weight: 800;
   border-top: solid 10px black;
   border-bottom: solid 10px black;
+  -webkit-filter: drop-shadow(0px 0px 40px rgba(0, 0, 0, 0.1));
+          filter: drop-shadow(0px 0px 40px rgba(0, 0, 0, 0.1));
+  margin-bottom: 30px;
 }
 
 .city {
-  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.line1 {
-  margin-top: 35px;
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 .line1, .line2, .line3, .line4, .line5 {
@@ -55,6 +54,11 @@ h1 {
   color: white;
   background-color: black;
   border: 2px solid #000000;
+  padding: 0 40px;
+}
+
+.line1 .countey, .line2 .countey, .line3 .countey, .line4 .countey, .line5 .countey {
+  width: 50%;
 }
 
 .line1 .countey h2, .line2 .countey h2, .line3 .countey h2, .line4 .countey h2, .line5 .countey h2 {
@@ -65,11 +69,21 @@ h1 {
   font-size: 16px;
 }
 
-.line1 p, .line2 p, .line3 p, .line4 p, .line5 p {
+.line1 .localTime, .line2 .localTime, .line3 .localTime, .line4 .localTime, .line5 .localTime {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50%;
   font-size: 72px;
 }
 
-.line2 {
+.line2, .line3, .line4 {
   background-color: white;
   color: black;
 }
