@@ -31,24 +31,41 @@ var options = {
 
 let date = new Date()
 
-function change(counteyDay){
+let counteyDay, counteyTime
+
+function change(counteyDay) {
     let str = counteyDay.split(',')
     let month = str[0].split(' ')
-    
+
     let result = month[1] + ' ' + month[0] + '.' + str[1];
     return result
 }
 
-localData.forEach(function (item, index) {
-    let counteyDay = date.toLocaleString('en-US', {day: 'numeric',month: 'short',year: 'numeric',timeZone: localData[index].timeZone}); // "Oct 11, 2019, 05:00"
+let str = ''
+function render() {
+    str = ''
+    localData.forEach(function (item, index) {
+        counteyDay = date.toLocaleString('en-US', { day: 'numeric', month: 'short', year: 'numeric', timeZone: localData[index].timeZone })
+        counteyTime = date.toLocaleString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: localData[index].timeZone })
 
-    city.innerHTML += `
-    <div class="line${index + 1}">
-        <div class="countey">
-            <h2>${localData[index].name}</h2>
-            <p>${change(counteyDay)}</p>
+        str += `
+        <div class="line${index + 1}">
+            <div class="countey">
+                <h2>${localData[index].name}</h2>
+                <p><i>${change(counteyDay)}</i></p>
+            </div>
+            <p class="localTime">${counteyTime}</p>
         </div>
-        <p class="localTime">${date.toLocaleString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: localData[index].timeZone })}</p>
-    </div>
-`
-})
+        `
+        return str
+    })
+}
+render()
+
+city.innerHTML = str
+
+setInterval(function () {
+    date = new Date()
+    city.innerHTML = str
+    render()
+}, 1000)
